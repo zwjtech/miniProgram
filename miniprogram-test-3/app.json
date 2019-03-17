@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/test/test"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "红太阳家纺",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+      "color": "#ccc",
+      "selectedColor":"black",
+      "list":[
+        {
+          "pagePath":"pages/index/index",
+          "text":"发现",
+          "iconPath":"images/faxian@2x.png",
+          "selectedIconPath":"images/faxian_selected@2x.png"
+        },
+        {
+          "pagePath": "pages/logs/logs",
+          "text": "消息",
+          "iconPath": "images/xiaoxi@2x.png",
+          "selectedIconPath": "images/xiaoxi_selected@2x.png"
+        },
+        {
+          "pagePath": "pages/test/test",
+          "text": "我",
+          "iconPath": "images/wo@2x.png",
+          "selectedIconPath": "images/wo_selected@2x.png"
+        }
+      ]
+  },
+  "debug": true
+}

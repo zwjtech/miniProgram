@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}} test</text>
+    <text>{{time}}</text>
+  </view>
+  <view>{{a+b}}</view>
+  <!-- <video>{{"hello,"+name}}</video> -->
+  <view>{{"hello,"+name}}</view>
+  <view>{{[1,2,3]}}</view>
+<view>{{"Hello"}}</view>
+<view wx:if="{{condition}}">True,show me</view>
+
+<view wx:if="{{length > 5}}">hi</view>
+<view wx:elif="{{length > 2}}">hello</view>
+<view wx:else>hi,hello</view>
+
+<block wx:if="{{false}}">
+  <view> view1 </view>
+  <view> view2 </view>
+</block>
+
+<view wx:for="{{array}}">
+    {{index}}:{{item.message}}
+</view>
+
+<switch wx:for="{{objectArray}}" wx:key="unique" > {{item.id}} </switch>
+<button bindtap="switch"> Switch </button>
+<button bindtap="addToFront"> Add to the front </button>
+
+
+<switch wx:for="{{numberArray}}" wx:key="*this" > {{item}} </switch>
+<button bindtap="addNumberToFront"> Add to the front </button>
+
+<template name="msgItem">
+  <view>
+    <text> {{index}}: {{msg}} </text>
+    <text> Time: {{time}} </text>
+  </view>
+</template>
+<template is="msgItem" data="{{...item}}"/>
+
+
+<template name="odd">
+  <view> odd </view>
+</template>
+<template name="even">
+  <view> even </view>
+</template>
+
+<block wx:for="{{[1, 2, 3, 4, 5]}}">
+  <template is="{{item % 2 == 0 ? 'even' : 'odd'}}"/>
+</block>
+
+<include src="../template/header.wxml"/>
+
+<view> body </view>
+
+<include src="../template/footer.wxml"/>
+
+<button bindtap="helloMINA">helloMINA </button>
+
+</view>

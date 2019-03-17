@@ -1,0 +1,22 @@
+<import src="template/template1.wxml"/>
+<import src="template/template2.wxml"/>
+<view>
+hello,world.
+</view>
+<view>{{name}}</view>
+<view>密码是：{{password}}</view>
+<button bindtap="sayHello">sayHello</button>
+<button bindtap="sayBye">sayBye</button>
+
+<button bindtap="show">显示OR隐藏</button>
+<view wx:if="{{bool}}">条件渲染显示 </view>
+
+<!-- <template is="obj" data="{{a:12,b:13}}">
+</template> -->
+<template is="obj" data="{{...obj1}}">
+</template>
+
+<!-- <template is="msgItem" data="{{index:1,msg:'hello',time:20190202}}">
+</template> -->
+<template is="msgItem" data="{{...obj2,time:'2019-03-07'}}">
+</template>

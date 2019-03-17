@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+   <map></map>
+  <view>{{ msg }}</view>
+  <button bindtap="clickMe">点击我</button>
+
+  <button bindtap="cliektToTest">点击我</button>
+  <button bindtap="clickToVideo">看视频</button>
+  <button bindtap="clickToBaidu">去百度</button>
+  <button bindtap="clickToMyServer">去我服务器那数据</button>
+   <button bindtap="clickToInterface1">get去我服务器那数据带数据（小鱼1024）</button>
+    <button bindtap="clickToInterface2">post去我服务器那数据</button>
+     <button bindtap="clickToInterface3">shopping-combination</button>
+</view>
+
+<template name = "testTemplate">
+  <view>{{a}}</view>
+  <view>{{b}}</view>
+</template>
+<!-- 
+<template is="testTemplate" data ="{{a=1,b=2}}"></template> -->
+
+<!--行-->
+<view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="j" style = "display:inline-block;width:40px">
+        <view wx:if="{{j <= i}}">
+        {{i}}*{{j}}={{i*j}}
+        </view>
+    </view>
+</view>

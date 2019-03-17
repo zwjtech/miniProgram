@@ -1,0 +1,6 @@
+<template name="obj"> 
+  <view>
+  <text>{{a}}</text>
+  <text>{{b}}</text>
+  </view>
+</template>
